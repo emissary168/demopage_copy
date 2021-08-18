@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="images/favicon.png" type="">
+
+  <script src="https://d3js.org/d3.v6.min.js"></script> 
+
+  <title> BDSE19-G1 </title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+
+    <!-- header section strats -->
+    <header class="header_section"  style="background-color: #FFF9EB;">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              原物料相關股票預測分析
+            </span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ">
+              <li class="nav-item ">
+                <a class="nav-link" href="index.html">Home </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="how.html">How</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="oil.html">Oil</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="iron.html">Iron<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="ship.html">Ship</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="result.html">Result</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+
+  <!-- iron checked-box line chart section -->
+  <section class="stock_title_section2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="heading_container">
+            <p>
+              <b>鋼鐵/不鏽鋼類股 2021 前半年股價預測圖</b>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="about_section layout_padding2">
+    <div class="container  ">
+      <div class="row">
+        <div class="col-md-9" id="iron_line">
+        </div>
+        <div class="col-md-3" id="iron_line_box">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="choose_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p>請選擇股票：
+            <select id="iron_up_stock_name">
+              <option value="2002.TW">中鋼(2002)</option>
+              <option value="2006.TW">東和鋼鐵(2006)</option>
+              <option value="2010.TW">春源(2010)</option>
+              <option value="2014.TW">中鴻(2014)</option>
+              <option value="2023.TW">燁輝(2023)</option>
+              <option value="2027.TW">大成鋼(2027)</option>
+              <option value="2028.TW">威致(2028)</option>
+              <option value="2030.TW">彰源(2030)</option>
+              <option value="2031.TW">新光鋼(2031)</option>
+              <option value="2038.TW">海光(2038)</option>
+            </select>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end iron checked-box line chart section -->
+
+  <!-- iron bar and line interactiion chart start-->
+  <section class="stock_title_section2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="heading_container">
+            <p>
+              <b>鋼鐵/不鏽鋼類股 RMSE值(越小越好) 與 股價預測分析圖</b>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="about_section layout_padding2">
+    <div class="container">
+      <div class="row" id="twochart">
+        <div class="col-md-6" id="iron_twochartOfbar">
+        </div>
+        <div class="col-md-6" id="iron_twochartOfline">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="choose_section"  style="padding: 10px 0 30px 0;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-11">
+          <p>請選擇股票：
+            <select id="iron_down_stock_name">
+              <option value="2002.TW">中鋼(2002)</option>
+              <option value="2006.TW">東和鋼鐵(2006)</option>
+              <option value="2010.TW">春源(2010)</option>
+              <option value="2014.TW">中鴻(2014)</option>
+              <option value="2023.TW">燁輝(2023)</option>
+              <option value="2027.TW">大成鋼(2027)</option>
+              <option value="2028.TW">威致(2028)</option>
+              <option value="2030.TW">彰源(2030)</option>
+              <option value="2031.TW">新光鋼(2031)</option>
+              <option value="2038.TW">海光(2038)</option>
+            </select>
+          </p>
+        </div>
+        <div class="col-md-1">
+          <p>
+            <a class="totoptext" href="iron.html">Go Top</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end iron bar and line interactiion chart -->
+
+  <!-- footer section -->
+  <!-- <footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://html.design/">Free Html Templates</a>
+      </p>
+    </div>
+  </footer> -->
+  <!-- footer section -->
+
+  <!-- jQery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.js"></script>
+  <!-- owl slider -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <!-- custom js -->
+  <script src="js/custom.js"></script>
+  <!-- iron page plot -->
+  <script src="./js/iron_page.js"></script>
+
+
+</body>
+
+</html>
